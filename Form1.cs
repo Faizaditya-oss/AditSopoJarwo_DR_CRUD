@@ -9,7 +9,12 @@ namespace CRUDMahasiswaADO
         private readonly SqlConnection conn;
         private readonly connectionString =
              "LAPTOP-4UOCIEQ0\\FAIZADITYA;Initial Catalog=DBAkademikADO;Integrated Security=True";
-        
+        public FormMahasiswa()
+        {
+            InitializeComponent();
+            conn = new SqlConnection(connectionString);
+        }
+    
 
 
 
