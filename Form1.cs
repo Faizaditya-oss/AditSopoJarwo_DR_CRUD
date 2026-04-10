@@ -192,8 +192,6 @@ namespace CRUDMahasiswaADO
 
         private void btnUpdate_Click_Click(object sender, EventArgs e)
         {
-            private void btnUpdate_Click(object sender, EventArgs e)
-        {
             try
             {
                 if (conn.State == System.Data.ConnectionState.Closed)
@@ -202,12 +200,12 @@ namespace CRUDMahasiswaADO
                 }
 
                 string query = @"UPDATE Mahasiswa
-                               SET Nama = @Nama,
-                                    JenisKelamin = @JK,
-                                     TanggalLahir = @TanggalLahir,
-                                     Alamat = @Alamat,
-                                     KodeProdi = @KodeProdi
-                                WHERE NIM = @NIM";
+                        SET Nama = @Nama,
+                            JenisKelamin = @JK,
+                            TanggalLahir = @TanggalLahir,
+                            Alamat = @Alamat,
+                            KodeProdi = @KodeProdi
+                        WHERE NIM = @NIM";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -236,6 +234,45 @@ namespace CRUDMahasiswaADO
                 MessageBox.Show("Terjadi kesalahan: " + ex.Message);
             }
         }
-    }
-    
+
+        private void btnDelete_Click_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State == System.Data.ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
+                DialogResult result = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi Hapus",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultConfirm == DialogResult.Yes)
+                {
+                    string query = "DELETE FROM Mahasiswa WHERE NIM = @NIM";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
+
+                    int result = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Data berhasil dihapus");
+                        ClearForm();
+                        btnLoad.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data tidak ditemukan");
+                    }
+                }
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message);
+            }
+        }
+     }
+
 }

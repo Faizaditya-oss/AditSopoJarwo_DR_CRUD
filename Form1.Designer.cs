@@ -43,7 +43,7 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnUpdate_Click = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnDelete_Click = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnInsert_Click = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -181,14 +181,15 @@
             this.btnUpdate_Click.UseVisualStyleBackColor = true;
             this.btnUpdate_Click.Click += new System.EventHandler(this.btnUpdate_Click_Click);
             // 
-            // button5
+            // btnDelete_Click
             // 
-            this.button5.Location = new System.Drawing.Point(450, 268);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(144, 23);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Menghapus Data";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDelete_Click.Location = new System.Drawing.Point(450, 268);
+            this.btnDelete_Click.Name = "btnDelete_Click";
+            this.btnDelete_Click.Size = new System.Drawing.Size(144, 23);
+            this.btnDelete_Click.TabIndex = 16;
+            this.btnDelete_Click.Text = "Menghapus Data";
+            this.btnDelete_Click.UseVisualStyleBackColor = true;
+            this.btnDelete_Click.Click += new System.EventHandler(this.btnDelete_Click_Click);
             // 
             // dataGridView1
             // 
@@ -217,7 +218,7 @@
             this.ClientSize = new System.Drawing.Size(678, 624);
             this.Controls.Add(this.btnInsert_Click);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnDelete_Click);
             this.Controls.Add(this.btnUpdate_Click);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnConnect);
@@ -258,7 +259,7 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnUpdate_Click;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnDelete_Click;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnInsert_Click;
     }
